@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About — Dylan Wilkins" description="software engineering researcher, film and architecture enthusiast.">
+  <section class="about-page">
+    <div class="about-header animate-in">
+      <h1 class="about-title">About Me</h1>
+      <div class="about-meta">
+
+        <span class="meta-text">last updated: march 26, 2026</span>
+      </div>
+    </div>
+
+    <div class="about-body animate-in delay-2">
+      <p>
+        I'm from <a href="#">Milton Keynes, UK</a> (where the computer was first prototyped - thanks <a href="#">Mr. Turing</a>), my family moved to the U.S. in 2009, when I was 3 years old. As a kid I would flip-flop between interests all the time, I could never settle on what I wanted to do for the month - let alone what career I wanted to pursue. It wasn't until I was ~10 years old when I fixed my family's <a href="#">Mrs. Pacman arcade machine</a> with a script I found online; introducing me to how cool technology could be.
+      </p>
+
+      <p>
+        Most of my work has been in <a href="#">novel security computing</a> - mainly building measures to combat deepfakes in the age of photorealistic image generation. 
+      </p>
+
+      <p>
+        I'm currently a software engineering intern at <a href="#">DRACO</a>, and contributing to projects at <a href="#">ACM@UCF</a>. I'm doing my best to build, and contribute to, meaningful software.
+      </p>
+
+      <p>
+        In my free time I watch films (Maya Deren, David Lynch, Agnes Varda, Todd Solondz, are some of my favorite directors) and explore architecture around the world. I like reading about <a href="#">urban planning</a>, <a href="#">Whodunits</a>, and the <a href="#">history of random fields</a>. I also tend to a growing collection of side projects.
+      </p>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-page {
+    padding: 3rem 0 5rem;
+  }
+
+  .about-header {
+    margin-bottom: 3rem;
+  }
+
+  .about-title {
+    font-family: var(--font-sans);
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+  }
+
+  .about-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .meta-icon {
+    font-size: 0.85rem;
+  }
+
+  .meta-text {
+    font-family: var(--font-sans);
+  }
+
+  .about-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-body p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+
+  .about-body a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .about-body a:hover {
+    opacity: 0.7;
+  }
+
+  .about-body code {
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+    font-size: 0.875em;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 600px) {
+    .about-title {
+      font-size: 2.25rem;
+    }
+
+    .about-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .about-body p {
+      padding-left: 1.25rem;
+    }
+  }
+</style>

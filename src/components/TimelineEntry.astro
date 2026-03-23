@@ -1,0 +1,90 @@
+---
+interface Props {
+  date: string;
+}
+
+const { date } = Astro.props;
+---
+
+<div class="timeline-entry">
+  <div class="timeline-marker">
+    <div class="timeline-dot"></div>
+    <div class="timeline-line"></div>
+  </div>
+  <div class="timeline-content">
+    <time class="timeline-date">{date}</time>
+    <div class="timeline-body">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .timeline-entry {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 0.5rem;
+  }
+
+  .timeline-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-timeline-dot);
+    flex-shrink: 0;
+  }
+
+  .timeline-line {
+    width: 1px;
+    flex: 1;
+    background-color: var(--color-border);
+    margin-top: 0.5rem;
+  }
+
+  .timeline-content {
+    padding-bottom: 2.5rem;
+    flex: 1;
+  }
+
+  .timeline-date {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-body {
+    font-size: 0.95rem;
+    color: #c0c0c0;
+    line-height: 1.7;
+  }
+
+  .timeline-body :global(p) {
+    color: #c0c0c0;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-body :global(a) {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .timeline-entry:last-child .timeline-line {
+    display: none;
+  }
+
+  .timeline-entry:last-child .timeline-content {
+    padding-bottom: 0;
+  }
+</style>

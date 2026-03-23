@@ -1,0 +1,106 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  link?: string;
+}
+
+const { title, description, link } = Astro.props;
+---
+
+<div class="work-item" data-expandable={description ? "true" : "false"}>
+  <button class="work-item-header" aria-expanded="false" type="button">
+    <svg class="work-item-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <path d="M4 2L8 6L4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="work-item-title">{title}</span>
+  </button>
+  {description && (
+    <div class="work-item-content">
+      <p class="work-item-description">{description}</p>
+      {link && <a href={link} class="work-item-link" target="_blank" rel="noopener noreferrer">View project →</a>}
+    </div>
+  )}
+</div>
+
+<style>
+  .work-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .work-item:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .work-item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    text-align: left;
+    transition: opacity var(--transition-fast);
+  }
+
+  .work-item-header:hover {
+    opacity: 0.7;
+  }
+
+  .work-item-chevron {
+    flex-shrink: 0;
+    transition: transform var(--transition-normal);
+    color: var(--color-text-muted);
+  }
+
+  .work-item[data-expanded="true"] .work-item-chevron {
+    transform: rotate(90deg);
+  }
+
+  .work-item-title {
+    font-weight: 400;
+  }
+
+  .work-item-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 0 0 1.75rem;
+  }
+
+  .work-item[data-expanded="true"] .work-item-content {
+    max-height: 200px;
+    padding-bottom: 1rem;
+  }
+
+  .work-item-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .work-item-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.work-item[data-expandable="true"]').forEach((item) => {
+    const btn = item.querySelector('.work-item-header') as HTMLButtonElement;
+    btn?.addEventListener('click', () => {
+      const expanded = item.getAttribute('data-expanded') === 'true';
+      item.setAttribute('data-expanded', expanded ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+</script>

@@ -1,0 +1,60 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <nav class="nav-container">
+    <a href="/" class="nav-home" class:list={[{ active: currentPath === '/' }]}>Home</a>
+    <div class="nav-links">
+      <a href="/about" class:list={['nav-link', { active: currentPath === '/about' || currentPath === '/about/' }]}>About</a>
+      <a href="/now" class:list={['nav-link', { active: currentPath === '/now' || currentPath === '/now/' }]}>Now</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    padding: 1.5rem 0;
+  }
+
+  .nav-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-home {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-home:hover {
+    opacity: 0.7;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-text);
+  }
+</style>

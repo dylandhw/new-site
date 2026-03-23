@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TimelineEntry from '../components/TimelineEntry.astro';
+---
+
+<BaseLayout title="Now — Dylan Wilks" description="What Dylan is up to right now — updates, projects, and thoughts.">
+  <section class="now-page">
+    <div class="now-header animate-in">
+      <h1 class="now-title">Now</h1>
+      <p class="now-subtitle">What am I up to?</p>
+    </div>
+
+    <div class="now-timeline animate-in delay-2">
+      <TimelineEntry date="March 2026">
+        <p>
+          Diving deeper into software engineering research, exploring new methodologies for code analysis and developer tooling. The intersection of AI and software engineering is fascinating — there's so much potential to improve how we build software.
+        </p>
+      </TimelineEntry>
+
+      <TimelineEntry date="February 2026">
+        <p>
+          Finally received my Greencard and work authorization!
+        </p>
+      </TimelineEntry>
+
+      <TimelineEntry date="January 2026">
+        <p>
+          Started the new year with a focus on open source contributions. Submitted a few PRs to <a href="#">gprMax</a> and spent time mentoring newer members at <a href="#">ACM@UCF</a>. Also picked up some new books on urban design.
+        </p>
+      </TimelineEntry>
+
+      <TimelineEntry date="December 2025">
+        <p>
+          Wrapped up the semester and built a few small projects over the break, including some tooling experiments for my homelab. Took time to rest and watch a looooot of films.
+        </p>
+      </TimelineEntry>
+
+      <TimelineEntry date="November 2025">
+        <p>
+          Deep into research work - wrapping up my first research full research thrust. I implemented a custom <a href="#">partially homomorphic encyrption</a> algorithm to speed up development iteration. I finished <a href="#">David Lynch's</a> filmography - ending it with <a href="https://letterboxd.com/dylwilks/film/twin-peaks-fire-walk-with-me/">Fire Walk With Me</a> alongside a <a href="#">Twin Peaks</a> rewatch. My hot take it that Mr. C is a representation of Dale's true self.
+        </p>
+      </TimelineEntry>
+
+      <TimelineEntry date="October 2025">
+        <p>
+          Started the first <a href="#">AMD</a>-funded student software engineering project at the <a href="#">University of Central Florida</a>. A.I.V.A. is an agent-driven framework for automating hardware verification test-benches. Hosted my 5th workshop of the semester - <a href="#">Introduction to Autonomous Vehicle Development</a> - with an attendance of 60 people!
+        </p>
+      </TimelineEntry>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .now-page {
+    padding: 3rem 0 5rem;
+  }
+
+  .now-header {
+    margin-bottom: 3rem;
+  }
+
+  .now-title {
+    font-family: var(--font-sans);
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+
+  .now-subtitle {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .now-timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 600px) {
+    .now-title {
+      font-size: 2.25rem;
+    }
+
+    .now-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+</style>

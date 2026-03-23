@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkItem from '../components/WorkItem.astro';
+---
+
+<BaseLayout title="dylan wilkins">
+  <section class="hero animate-in">
+    <h1 class="hero-heading">
+      Hi, I'm <span class="hero-name">Dylan.</span> I'm a software engineering researcher and Gopher, I like <a href="#" class="hero-link">film</a> and <a href="#" class="hero-link">architecture.</a>
+    </h1>
+  </section>
+
+  <section class="work animate-in delay-2">
+    <h2 class="work-heading">Some of my work</h2>
+    <div class="work-list">
+      <WorkItem
+        title="DRACO"
+        description="swe intern working on novel security computation"
+      />
+      <WorkItem
+        title="A.I.V.A."
+        description="project software lead; agents for hardware verification - funded by AMD"
+      />  
+      <WorkItem
+        title="ACM@UCF"
+        description="vice president, growth & engineering"
+      />
+      <WorkItem
+        title="l-rpec"
+        description="a lightweight reverse-proxy with edge caching"
+      />
+      <WorkItem
+        title="VIPS"
+        description="a video integrity and provenance system"
+      />
+      <WorkItem
+        title="OrbitAI"
+        description="AI-powered low earth orbit satellelite collision detection system"
+      />
+      <WorkItem
+        title="PHE"
+        description="a partially homomorphic encryption algorithm implemented in c++"
+      />
+      <WorkItem
+        title="MisoBot"
+        description="contributing to an open source discord bot with 6 million users"
+      />
+      <WorkItem
+        title="hamlet64"
+        description="world's first (only, lol) shakespearean encoder"
+      />
+      <WorkItem
+        title="certis"
+        description="blockchain based certification system"
+      />
+      <WorkItem
+        title="infinite-earth"
+        description="terrain generator with a complete custom graphics pipeline"
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 3rem 0 4rem;
+  }
+
+  .hero-heading {
+    font-family: var(--font-sans);
+    font-size: 2.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+  }
+
+  .hero-name {
+    color: var(--color-text);
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .hero-link {
+    color: var(--color-text);
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    transition: opacity 0.2s ease;
+  }
+
+  .hero-link:hover {
+    opacity: 0.7;
+  }
+
+  .work {
+    padding-bottom: 5rem;
+  }
+
+  .work-heading {
+    font-family: var(--font-sans);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.01em;
+  }
+
+  .work-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 2rem 0 3rem;
+    }
+
+    .hero-heading {
+      font-size: 1.6rem;
+    }
+
+    .work {
+      padding-bottom: 3rem;
+    }
+  }
+</style>

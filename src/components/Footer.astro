@@ -1,0 +1,110 @@
+---
+---
+
+<footer class="site-footer">
+  <hr class="footer-divider" />
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:contact@dylwilks.dev">contact@dylwilks.dev</a></li>
+          <li><a href="https://linkedin.com" target="www.linkedin.com/in/dylwilks" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="https://github.com/dylandhw" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul class="footer-links footer-links-secondary">
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="https://letterboxd.com" target="https://letterboxd.com/dylwilks/" rel="noopener noreferrer">Letterboxd</a></li>
+        </ul>
+      </div>
+      <div class="footer-illustration">
+        <img src="/gromit.jpg" alt="Gromit" class="footer-image" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: transparent;
+    padding: 0 0 3rem;
+    margin-top: auto;
+  }
+
+  .footer-divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: -2rem 0 1.5rem;
+  }
+
+  .footer-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .footer-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .footer-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .footer-links-secondary {
+    padding-top: 2.15rem;
+  }
+
+  .footer-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-text);
+  }
+
+  .footer-illustration {
+    opacity: 0.85;
+  }
+
+  .footer-image {
+    width: 100px;
+    height: auto;
+    border-radius: 6px;
+    opacity: 0.85;
+  }
+
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-illustration {
+      margin-left: 0;
+      order: -1;
+    }
+  }
+</style>
